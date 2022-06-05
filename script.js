@@ -7,6 +7,10 @@ function computerPlay() {
   return choices[(Math.floor(Math.random() * 3))]
 }
 
+function printScore() {
+  console.log(`Player Score: ${playerScore} Computer Score: ${computerScore} with ${ties} ties`)
+}
+
 function playRound(playerSelection, computerSelection) {
   console.log(playerSelection);
   console.log(computerSelection);
@@ -24,12 +28,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  console.log(`Player Score: ${playerScore} Computer Score: ${computerScore} with ${ties} ties`)
+  printScore();
   for(let i = 0; i < 5; i++) {
     const playerSelection = prompt("'Enter Rock, Paper, or Scissors'").toLowerCase();
     const computerSelection = computerPlay();
     playRound(playerSelection, computerSelection);
-    console.log(`Player Score: ${playerScore} Computer Score: ${computerScore} with ${ties} ties`)
+    printScore();
   }
 }
 
