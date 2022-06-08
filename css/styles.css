@@ -1,0 +1,16 @@
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-pieces {
+  display: flex;
+}
+
+.piece {
+  border: 2px solid #555;
+  margin: 20px 30px;
+}

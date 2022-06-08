@@ -1,14 +1,11 @@
 let playerScore = 0;
 let computerScore = 0;
 let ties = 0;
-let choices = ['rock', 'paper', 'scissors']
+let playerPick = '';
 
-function computerPlay() {
-  return choices[(Math.floor(Math.random() * 3))]
-}
-
-function printScore() {
-  console.log(`Player Score: ${playerScore} Computer Score: ${computerScore} with ${ties} ties`)
+function playerSelection(e) {
+  playerPick = (e.target.classList.value);
+  game();
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -27,14 +24,18 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  printScore();
-  for(let i = 0; i < 5; i++) {
-    const playerSelection = prompt("'Enter Rock, Paper, or Scissors'").toLowerCase();
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    printScore();
-  }
+function printScore() {
+  console.log(`Player Score: ${playerScore} Computer Score: ${computerScore} with ${ties} tie(s)`)
 }
 
-game();
+function game() {
+  const choices = ['rock', 'paper', 'scissors'];
+  const computerSelection = choices[(Math.floor(Math.random() * 3))]
+  playRound(playerPick, computerSelection);
+  printScore();
+}
+
+let gamePieces = document.querySelectorAll(".piece");
+gamePieces.forEach(gamePiece => gamePiece.addEventListener('click', playerSelection));
+
+
