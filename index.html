@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/styles.css">
   <title>Rock | Paper | Scissors</title>
 </head>
 <body>
   <div class="main-container">
+    <div class="winner-message"></div>
     <h1 class="main-header">Let's Play Rock, Paper, Scissors!</h1>
-    <div class="game-pieces">
+    <div class="new-game-hidden new-game-div">
+      <button class="new-game-btn">Play Again</button>
+    </div>
+    <div class="computer-pick">
+      <p class="computer-pick-text"></p>
+    </div>
+    <div class="game-board">
       <div class="piece"><img class="rock" src="imgs/rock.png" alt=""></div>
       <div class="piece"><img class="paper" src="imgs/paper.png" alt=""></div>
       <div class="piece"><img class="scissors" src="imgs/scissors.png" alt=""></div>
